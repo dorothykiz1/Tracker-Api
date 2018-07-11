@@ -33,7 +33,7 @@ class REquest(Resource):
         abort_if_request_doesnt_exist(request_id)
         del REQUESTS[request_id]
         return'', 204
-"""
+
     def put(self, request_id):
         args = parser.parse_args()
         req = {'req': args['req']}
@@ -47,7 +47,7 @@ class RequestsList(Resource):
 
     def get(self):
         return REQUESTS
-
+"""
     def post(self):
         args = parser.parse_args()
         request_id = int(max(REQUESTS.keys()).lstrip('request')) + 1
@@ -58,8 +58,8 @@ class RequestsList(Resource):
 
 """
 # set api endpoints
-#api.add_resource(RequestsList, '/v1/users/requests')
-api.add_resource(REquest, '/v1/users/requests/<request_id>')
+api.add_resource(RequestsList, '/v1/users/requests')
+#api.add_resource(REquest, '/v1/users/requests/<request_id>')
 
 
 if __name__ == '__main__':
