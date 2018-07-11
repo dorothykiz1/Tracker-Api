@@ -44,10 +44,10 @@ class REquest(Resource):
 
 """
 class RequestsList(Resource):
-
+    """
     def get(self):
         return REQUESTS
-"""
+    """
     def post(self):
         args = parser.parse_args()
         request_id = int(max(REQUESTS.keys()).lstrip('request')) + 1
@@ -56,10 +56,10 @@ class RequestsList(Resource):
         return REQUESTS[request_id], 201
 
 
-"""
+
 # set api endpoints
 api.add_resource(RequestsList, '/v1/users/requests')
-#api.add_resource(REquest, '/v1/users/requests/<request_id>')
+api.add_resource(REquest, '/v1/users/requests/<request_id>')
 
 
 if __name__ == '__main__':
