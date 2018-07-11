@@ -24,7 +24,7 @@ parser.add_argument('req')
 
 
 class REquest(Resource):
-    """
+    
     def get(self, request_id):
         abort_if_request_doesnt_exist(request_id)
         return REQUESTS[request_id]
@@ -42,12 +42,12 @@ class REquest(Resource):
 # RequestsList
 # shows a list of all requests, and lets you POST/create to add new requests
 
-"""
+
 class RequestsList(Resource):
-    """
+    
     def get(self):
         return REQUESTS
-    """
+    
     def post(self):
         args = parser.parse_args()
         request_id = int(max(REQUESTS.keys()).lstrip('request')) + 1
