@@ -62,5 +62,3 @@ api.add_resource(RequestsList, '/v1/users/requests')
 api.add_resource(REquest, '/v1/users/requests/<request_id>')
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
